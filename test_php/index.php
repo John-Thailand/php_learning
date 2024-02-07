@@ -1,29 +1,22 @@
 <?php
 
-// データが入っているかどうか
-// isset empty is_null
+// 複数の値 foreach
+$members = [
+    'name' => '本田',
+    'height' => 170,
+    'hobby' => 'サッカー'
+];
 
-$test = '';
-
-if(empty($test)) {
-    echo '変数が空です';
+// バリューのみ表示
+foreach($members as $member) {
+    echo $member;
 }
 
-// AND と　OR
+echo '<br>';
 
-$signal_1 = 'red';
-$signal_2 = 'blue';
-
-if ($signal_1 === 'red' && $signal_2 === 'blue') {
-    echo '赤と青です';
+// キーとバリューそれぞれ表示
+foreach($members as $key => $value) {
+    echo $key . 'は' . $value . 'です';
 }
-
-// 三項演算子
-
-$math = 80;
-
-$comment = $math > 80 ? 'good' : 'not good';
-
-echo $comment;
 
 ?>
