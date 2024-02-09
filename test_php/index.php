@@ -1,34 +1,37 @@
 <?php
 
-function test() {
-    echo 'テスト';
-}
+// 文字列の長さ
 
-test();
+$text = 'あいうえお';
 
-$comment = 'コメント2';
+// echo strlen($text);
 
-function getComment($string) {
-    echo $string;
-}
+// echo mb_strlen($text);
 
-getComment($comment);
+// 文字列の置換
 
-function getNumberOfComment() {
-    return 5;
-}
+$str = '文字列を置換します';
 
-$commentNumber = getNumberOfComment();
+// echo str_replace('置換', 'ちかん', $str);
 
-echo $commentNumber;
+// 指定文字列で分割
 
-function sumPrice($int1, $int2) {
-    $int3 = $int1 + $int2;
-    return $int3;
-}
+$str_2 = '指定文字列で、分割します';
 
-$total = sumPrice(3, 5);
+// echo '<pre>';
+// var_dump(explode('、', $str_2));
+// echo '</pre>';
 
-echo $total;
+// 正規表現
+
+$str_3 = '特定の文字列が含まれるか確認する';
+
+// echo preg_match('/文字列/', $str_3);
+
+// 指定文字列から文字列を取得する
+
+// echo substr('abcde', 1);
+
+// echo mb_substr('かきくけこ', 1);
 
 ?>
