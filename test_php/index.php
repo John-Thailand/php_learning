@@ -1,22 +1,19 @@
 <?php
 
-// 複数の値 foreach
-$members = [
-    'name' => '本田',
-    'height' => 170,
-    'hobby' => 'サッカー'
-];
+$data = 1;
 
-// バリューのみ表示
-foreach($members as $member) {
-    echo $member;
-}
-
-echo '<br>';
-
-// キーとバリューそれぞれ表示
-foreach($members as $key => $value) {
-    echo $key . 'は' . $value . 'です';
+switch ($data) {
+    case 1:
+        echo '1です';
+        break;
+    case 2:
+        echo '2です';
+        break;
+    case 3:
+        echo '3です';
+        break;
+    default:
+        echo '1-3ではありません';
 }
 
 ?>
