@@ -1,11 +1,18 @@
 <?php
 
-$array = ['りんご', 'みかん'];
+$postalCode = '123-4567';
 
-array_push($array, 'ぶどう', 'なし');
+// camelCase
+function checkPostalCode($str) {
+    $replaced = str_replace('-', '', $str);
+    $length = strlen($replaced);
 
-echo '<pre>';
-var_dump($array);
-echo '</pre>';
+    if ($length === 7) {
+        return true;
+    }
+    return false;
+}
+
+var_dump(checkPostalCode($postalCode));
 
 ?>
