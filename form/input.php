@@ -2,6 +2,8 @@
 
 session_start();
 
+require 'validation.php';
+
 header('X-FRAME-OPTIONS:DENY');
 
 // スーパーグローバル変数 php 9種類
@@ -22,8 +24,9 @@ function h($str) {
 // input.php
 
 $pageFlag = 0;
+$errors = validation($_POST);
 
-if (!empty($_POST['btn_confirm'])) {
+if (!empty($_POST['btn_confirm']) && empty($errors)) {
     $pageFlag = 1;
 }
 
@@ -101,6 +104,16 @@ if(!isset($_SESSION['csrfToken'])) {
 }
 $token = $_SESSION['csrfToken'];
 ?>
+
+<?php if(!empty($errors) && !empty($_POST['btn_confirm'])) : ?>
+<?php echo '<ul>' ;?>
+<?php
+    foreach($errors as $error) {
+        echo '<li>' . $error . '</li>';
+    }
+?>
+<?php echo '</ul>' ; ?>
+<?php endif ;?>
 
 <form method="POST" action="input.php">
 指名
