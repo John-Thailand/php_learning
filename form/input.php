@@ -1,8 +1,8 @@
 <?php
 
-if (!empty($_GET)) {
+if (!empty($_POST)) {
     echo '<pre>';
-    echo var_dump($_GET);
+    echo var_dump($_POST);
     echo '</pre>';
 }
 
@@ -16,7 +16,7 @@ if (!empty($_GET)) {
 <head></head>
 <body>
 
-<form method="GET" action="input.php">
+<form method="POST" action="input.php">
 指名
 <input type="text" name="your_name">
 <br>
