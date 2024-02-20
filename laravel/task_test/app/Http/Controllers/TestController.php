@@ -12,8 +12,15 @@ class TestController extends Controller
         // Testの表を全件で取得する
         $values = Test::all();
 
+        $count = Test::count();
+
+        // idが1のものを取得する
+        $first = Test::findOrFail(1);
+
+        $whereBBB = Test::where('text', '=', 'bbb')->get();
+
         // 取得してきたデータをdd（die + var_dump）で中身を確認する
-        // dd($values);
+        dd($values, $count, $first, $whereBBB);
 
         // viewのtestフォルダのtest.blade.phpへ遷移する
         // compactを使うことで、その変数をviewに渡すことができる
