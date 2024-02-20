@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// URLをtests/testとする
+// TestController::class = App\Http\Controllers\TestController
+// TestControllerのindexメソッドを実行する
+Route::get('tests/test', [TestController::class, 'index']);
