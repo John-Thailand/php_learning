@@ -10,6 +10,8 @@ class TestController extends Controller
 {
     public function index()
     {
+        dd('test');
+        
         // Eloquentを使ってデータ操作を行う方法
         // Testの表を全件で取得する
         // $values = Test::all();
