@@ -21,6 +21,19 @@ Route::get('tests/test', [ TestController::class, 'index' ]);
 // resourceを使うことで7つのメソッドを実行できるようになる
 // Route::resource('contacts', ContactFormController::class);
 
+// Route::get('contacts', [ ContactFormController::class, 'index'])->name('contacts.index');
+
+// prefix:フォルダ名
+// middlewareのauth：認証していないとページにアクセスできない
+// indexメソッド
+// index：ファイル名
+Route::prefix('contacts')->middleware(['auth'])
+->controller(ContactFormController::class)
+->name('contacts.')
+->group(function() {
+    Route::get('/', 'index')->name('index');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
