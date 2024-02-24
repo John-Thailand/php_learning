@@ -11,6 +11,12 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     index<br>
                     <a href="{{ route('contacts.create') }}" class="text-blue-500">新規登録</a>
+                    @foreach($contacts as $contact)
+                    {{ $contact->id }}
+                    {{ $contact->name }}
+                    {{ $contact->title }}
+                    {{ $contact->created_at }}
+                    @endforeach
                 </div>
             </div>
         </div>

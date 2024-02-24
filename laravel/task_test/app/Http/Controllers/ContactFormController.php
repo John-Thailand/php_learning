@@ -14,7 +14,9 @@ class ContactFormController extends Controller
      */
     public function index()
     {
-        return view('contacts.index');
+        $contacts = Contactform::select('id', 'name', 'title', 'created_at')->get();
+
+        return view('contacts.index', compact('contacts'));
     }
 
     /**
@@ -60,7 +62,9 @@ class ContactFormController extends Controller
      */
     public function show($id)
     {
-        //
+        $contact = ContactForm::find($id);
+
+        return view('contacts.show', compact('contact'));
     }
 
     /**
