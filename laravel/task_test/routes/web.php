@@ -31,7 +31,9 @@ Route::prefix('contacts')->middleware(['auth'])
 ->controller(ContactFormController::class)
 ->name('contacts.')
 ->group(function() {
+    // パス、メソッド、ファイル名
     Route::get('/', 'index')->name('index');
+    Route::get('/create', 'create')->name('create');
 });
 
 Route::get('/', function () {
