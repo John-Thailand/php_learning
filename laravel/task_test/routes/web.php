@@ -34,6 +34,7 @@ Route::prefix('contacts')->middleware(['auth'])
     // パス、メソッド、ファイル名
     Route::get('/', 'index')->name('index');
     Route::get('/create', 'create')->name('create');
+    Route::post('/', 'store')->name('store');
 });
 
 Route::get('/', function () {
