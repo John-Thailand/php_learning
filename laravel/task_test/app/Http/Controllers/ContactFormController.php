@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ContactFrom;
+use App\Services\CheckFormService;
 
 class ContactFormController extends Controller
 {
@@ -64,7 +65,11 @@ class ContactFormController extends Controller
     {
         $contact = ContactForm::find($id);
 
-        return view('contacts.show', compact('contact'));
+        $gender = CheckFormService::checkGender($contact);
+
+        $age = CheckFormService::checkAge($contact);
+
+        return view('contacts.show', compact('contact', 'gender', 'age'));
     }
 
     /**
